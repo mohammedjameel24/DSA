@@ -7,8 +7,8 @@ int * rearrangeZeroestoback(int arr[], int n)
     for(int i = 0; i < n; i++) // iterate over elements 
     {
         if(arr[i] != 0) // if arr[i] is a non zero element then increment the count and  
-        {               // after wards swap it with the count
-            swap(arr[i],arr[count]);
+        {               
+            swap(arr[i],arr[count]);// after wards swap it with the count
             count++;
         }
     }
@@ -23,8 +23,8 @@ int * rearrangeZeroestofront(int arr[], int n)
     for(int i = lastIndex; i>= 0; --i) // iterate over elements 
     {
         if(arr[i] != 0) // if arr[i] is a non zero element then increment the count and  
-        {               // after wards swap it with the count
-            swap(arr[i],arr[lastIndex]);
+        {               
+            swap(arr[i],arr[lastIndex]); // after wards swap it with the count
             --lastIndex;
         }
     }
@@ -41,7 +41,7 @@ by idententifying the count of non zero elements we swap the current non zero el
 
 int main()
 {
-    int arr[] = {10,0,0,0,7,3,20,1}; //() 
+    int arr[] = {10,0,0,0,7,3,20,1}; 
     int n = sizeof(arr)/sizeof(arr[0]);
 
     auto p =rearrangeZeroestoback(arr,n);

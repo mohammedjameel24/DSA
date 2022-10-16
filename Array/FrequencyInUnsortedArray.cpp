@@ -1,31 +1,7 @@
-#include <iostream>
-#include <algorithm>
-
+#include<iostream>
 using namespace std;
 
-void frequencyOfElements(int arr[], int n)
-{
-    sort(arr, arr+n) ;
-    int freq = 1 ;
-    int i = 1;
-    while(i < n ) //while i is less than n 
-    {
-        while(i<n && arr[i] == arr[i-1]) // while above condition & arr[i] is equal to arr[i-1];
-        {
-            freq++; //increase the frequency as you see equal to i
-            i++; // increment the arr[i] index
 
-        }
-        cout << "("<< arr[i-1] << " " << freq << ")"<< endl;
-        i++;
-        freq = 1;
-    }
-    if(n == 1 || arr[n-1] != arr[n-2])
-    {
-        cout << arr[n-1] << " " << 1;
-    }
-
-}
 void frequencyOfElements(int arr[], int n)
 {
     int frequency[n];
@@ -56,10 +32,12 @@ void frequencyOfElements(int arr[], int n)
     }  
 }
 
-int main()
+
+int main(void)
 {
-    int arr[] = {40,50,50,50,40};
+    int arr[] = {10,22,22,10,11,11,22};
     int n = sizeof(arr)/sizeof(arr[0]);
 
-    frequencyOfElements(arr,n);
+    frequencyOfElements(arr, n);
+   
 }

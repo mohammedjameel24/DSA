@@ -3,12 +3,12 @@ using namespace std;
 
 int * reverse(int arr[], int n)
 {
-    int low = 0, high = n-1;
-    while(low < high)
+    int low = 0, high = n-1; //initialize low with 0 and high with lastIndex
+    while(low < high) // uptill low is less than high
     {
-        swap(arr[low],arr[high]);
-        low++;
-        high--;
+        swap(arr[low],arr[high]);// swap arr[low ] with arr[lastindex]
+        low++; // increment low 
+        high--; // decrement lastIndex
         /*
             x = x + y
             y = x - y
