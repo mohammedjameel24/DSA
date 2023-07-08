@@ -1,37 +1,36 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-int BinarySearch(int arr[] , int n, int x)
+int binarySearch(int arr[], int low, int high, int x)
 {
-	int high = n-1;
-	int low = 0;
-	while(low <= high)
-	{
-		int mid = (high + low ) / 2;
-		if(arr[mid] == x)
-		{
+	while (low <= high) {
+		int mid = low + (high - low) / 2;
+
+		// Check if x is present at mid
+		if (arr[mid] == x)
 			return mid;
-		}
-		else if(arr[mid] > x)
-		{
-			high = mid - 1;
-		}
-		else{
+
+		// If x greater, ignore left half
+		if (arr[mid] < x)
 			low = mid + 1;
-		}
 
+		// If x is smaller, ignore right half
+		else
+			high = mid - 1;
 	}
+
+	// if we reach here, then element was
+	// not present
 	return -1;
-
-
 }
 
-int main()
+int main(void)
 {
-	int arr[] = {11,33,45,89,111,124};
-	int n = sizeof(arr)/sizeof(arr[0]);
-
-	int target = 35;
-
-	cout << BinarySearch(arr, n, target);
+	int arr[] = { 2, 3, 4, 10, 40 };
+	int x = 10;
+	int n = sizeof(arr) / sizeof(arr[0]);
+	int result = binarySearch(arr, 0, n - 1, x);
+	(result == -1)
+		? cout << "Element is not present in array"
+		: cout << "Element is present at index " << result;
+	return 0;
 }

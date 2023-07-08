@@ -45,6 +45,6 @@ void primeFactor(int n)
 }
 int main()
 {
-    int num = 1031;
+    int num = 13;
     primeFactor(num);
 }

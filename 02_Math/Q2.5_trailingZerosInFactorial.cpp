@@ -13,8 +13,7 @@ int countTrailingZeros(int n)
 int main()
 {
 
-    int n ;
-    cout << "entre value of n";
-    cin >> n;
+    int n = 50 ;
+
     cout << countTrailingZeros(n) << endl;
 }
